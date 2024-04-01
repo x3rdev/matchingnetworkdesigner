@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<script type="text/javascript" src="mnfunctions.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="onLoad()">
+    <h1> Matching Network Designer </h1>
+    <button id="dark_mode_button" onclick="toggleDarkMode()">☾</button>
+    <form name="input">
+        <p>
+            <label for="source_resistance">Source Resistance:</label>
+            <input type="number" id="source_resistance" size="8">
+            <label for="source_reactance">Source Reactance:</label>
+            <input type="number" id="source_reactance" size="8">
+        </p>
+        <p>
+            <label for="load_resistance">Load Resistance:</label>
+            <input type="number" id="load_resistance" size="8">
+            <label for="load_reactance">Load Reactance:</label>
+            <input type="number" id="load_reactance" size="8">
+        </p>
+        <p>
+            <label for="desired_q">Desired Q:</label>
+            <input type="number" id="desired_q" size="8">
+            <label for="frequency">Frequency:</label>
+            <input type="number" id="frequency" size="8">
+        </p>
+        <p> <input type="button" value="Calculate" onclick="calculateCircuits()"> </p>
+    </form>
+    <div class="dropdown">
+        <button id="dropdown-button">Select Matching Network Configuration ▼</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+    <p> LOW PASS Hi-Low Matching Network </p>
+    <p> <img src="img/cllp.gif" alt="low pass hi-low matching network circuit diagram"> </p>
+    <form name="circuit1">
+        <p>
+            <label for="circuit1L">L Value:</label>
+            <input type="text" id="circuit1L" readonly size="6">
+            nH
+        </p>
+        <p>
+            <label for="circuit1C">C Value:</label>
+            <input type="text" id="circuit1C" readonly size="6">
+            pF
+        </p>
+        <p>
+            <label for="circuit1Q">Q Value:</label>
+            <input type="text" id="circuit1Q" readonly size="6">
+        </p>
+    </form>
+    <p> LOW PASS Low-Hi Matching Network </p>
+    <p> <img src="img/lclp.gif" alt="low pass low-hi matching network circuit diagram"> </p>
+    <form name="circuit2">
+        <p>
+            <label for="circuit2L">L Value:</label>
+            <input type="text" id="circuit2L" readonly size="6">
+            nH
+        </p>
+        <p>
+            <label for="circuit2C">C Value:</label>
+            <input type="text" id="circuit2C" readonly size="6">
+            pF
+        </p>
+        <p>
+            <label for="circuit2Q">Q Value:</label>
+            <input type="text" id="circuit2Q" readonly size="6">
+        </p>
+    </form>
+</body>
+</html>
