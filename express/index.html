@@ -3,7 +3,7 @@
 <script type="text/javascript" src="mnfunctions.js"></script>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Matching Network Designer</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body onload="onLoad()">
@@ -31,47 +31,34 @@
         <p> <input type="button" value="Calculate" onclick="calculateCircuits()"> </p>
     </form>
     <div class="dropdown">
-        <button id="dropdown-button">Select Matching Network Configuration ▼</button>
-        <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+        <button id="dropdown-button" onclick="openCircuitDropdown()">Select Matching Network Configuration ▼</button>
+        <div id="dropdown-content" class="dropdown-content">
+            <a onclick="setCircuit(1)">LOW PASS Hi-Low</a>
+            <a onclick="setCircuit(2)">LOW PASS Low-Hi</a>
         </div>
     </div>
-    <p> LOW PASS Hi-Low Matching Network </p>
-    <p> <img src="img/cllp.gif" alt="low pass hi-low matching network circuit diagram"> </p>
-    <form name="circuit1">
+    <p id="circuitTitle"> LOW PASS Hi-Low Matching Network </p>
+    <p> <img id="circuitImage" src="img/cllp.gif" alt="low pass hi-low matching network circuit diagram"> </p>
+    <form name="circuit">
         <p>
-            <label for="circuit1L">L Value:</label>
-            <input type="text" id="circuit1L" readonly size="6">
+            <label for="circuitL">L Value:</label>
+            <input type="text" id="circuitL" readonly size="6">
             nH
         </p>
         <p>
-            <label for="circuit1C">C Value:</label>
-            <input type="text" id="circuit1C" readonly size="6">
+            <label for="circuitC">C Value:</label>
+            <input type="text" id="circuitC" readonly size="6">
             pF
         </p>
         <p>
-            <label for="circuit1Q">Q Value:</label>
-            <input type="text" id="circuit1Q" readonly size="6">
+            <label for="circuitQ">Q Value:</label>
+            <input type="text" id="circuitQ" readonly size="6">
         </p>
     </form>
-    <p> LOW PASS Low-Hi Matching Network </p>
-    <p> <img src="img/lclp.gif" alt="low pass low-hi matching network circuit diagram"> </p>
-    <form name="circuit2">
+    <form name="file_input">
         <p>
-            <label for="circuit2L">L Value:</label>
-            <input type="text" id="circuit2L" readonly size="6">
-            nH
-        </p>
-        <p>
-            <label for="circuit2C">C Value:</label>
-            <input type="text" id="circuit2C" readonly size="6">
-            pF
-        </p>
-        <p>
-            <label for="circuit2Q">Q Value:</label>
-            <input type="text" id="circuit2Q" readonly size="6">
+            <label for="input">Import from CSV file:</label>
+            <input type="file" id="input" accept="text/csv">
         </p>
     </form>
 </body>
